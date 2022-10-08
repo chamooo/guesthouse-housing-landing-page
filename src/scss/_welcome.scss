@@ -1,0 +1,116 @@
+body  {
+}
+.welcome {
+    padding-top: 80px;
+    height: 730px;
+    width: 100%;
+    background-image: url('/img/header.jpg');
+    background-size: cover;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 170px;
+    }
+
+    &__logo {
+        width: 256px;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 110%;
+        color: $white;
+        margin-bottom: 45px;
+    }
+
+    &__sub-title {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 100px;
+    }
+    &__mouse {
+        @media (max-width: ($md3+px)){
+            display: none; 
+        }
+        width: 60px;
+        height: 60px;
+        animation: updown 1s ease-in-out 1s infinite alternate;
+    }
+    @keyframes updown {
+        0% {
+            margin-top: -8px;
+        }
+        100% {
+            margin-top: 0;
+        }
+    }
+}
+
+.scroll {
+    @media (max-width: ($md3+px)){
+        display: block; 
+    }
+    display: none;
+	width: 50px;
+	height: 50px;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 50%;
+	position: relative;
+    animation: updown 1s ease-in-out 1s infinite alternate;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 15px;
+		left: 36%;
+		width: 13px;
+		height: 13px;
+		border-left: 1px solid rgb(255, 255, 255);
+  	    border-bottom: 1px solid rgb(255, 255, 255);
+		transform: rotate(-45deg);
+	}
+}
+
+
+@media (max-width: ($md2+px)){
+    .welcome {
+        &__title {
+            font-size: 40px;
+        }
+
+        &__logo {
+            width: 200px;
+        }
+    }
+}
+
+@media (max-width: ($md3+px)){
+    .welcome {
+        &__title {
+            font-size: 35px;
+        }
+
+        &__logo {
+            width: 200px;
+        }
+    }
+}
+@media (max-width: ($md4+px)){
+    .welcome {
+        &__title {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        &__logo {
+            width: 180px;
+        }
+
+        &__sub-title {
+            font-size: 12px;
+        }
+    }
+}

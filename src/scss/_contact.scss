@@ -1,0 +1,75 @@
+
+.contact {
+    background-color: $warmWhite;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    @media (max-width: ($md3+px)){
+        padding-top: 80px;
+        padding-bottom: 80px; 
+    }
+    // .contact__container
+
+    &__container {
+        padding-top: 30px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include orangeLine(50);
+    }
+
+    // .contact__title
+
+    &__title {
+        margin-bottom: 17px;
+        max-width: 533px;
+        line-height: 112%;
+    }
+
+    // .contact__text
+
+    &__text {
+        margin-bottom: 20px;
+        color: $mainGreen;
+        font-size: 16px;
+        max-width: 600px;
+        line-height: 150%;
+    }
+
+}
+.buttons-contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    // .buttons-contact__cont
+
+    &__cont {
+        border: 2px solid $mainGreen;
+        color: $mainGreen;
+        font-weight: 700;
+    }
+
+    // .buttons-contact__book
+
+    &__book {
+        border: 2px solid $mainGreen;
+        color: $white;
+        font-weight: 700;
+        background-color: $mainGreen;
+    }
+}
+@media (max-width: ($md3+px)){
+    .buttons-contact {
+        &__cont,
+        &__book {
+            width: 100%;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+    }
+}

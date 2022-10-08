@@ -1,0 +1,147 @@
+.header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $mainGreen;
+    &__container {
+        position: relative;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        padding-right: 20px;
+    }
+
+    &__button {
+        border: 1px solid $white;
+        color: $white;
+    }
+}
+
+.logo {}
+
+.menu {
+
+    &__body {
+        flex: 1 1 auto;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 10px;
+    }
+
+    &__item {}
+    
+    &__link {
+        color: $white;
+        opacity: 0.5;
+        transition: opacity 0.3s ease 0s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+.active {
+    opacity: 1;
+}
+
+.burgrer {
+    position: absolute;
+    right: 5px;
+    top: 19%;
+}
+@media (max-width: ($md3+px)){
+    .header__container {
+        padding-right: 60px;
+    }
+    body.lock {
+        overflow: hidden;
+    }
+    .header__logo {
+        flex: 1 1 auto;
+        z-index: 99px;
+    }
+    .header__button {
+        margin-right: 20px;
+    }
+    .header__burger {
+        margin: 10px 10px;
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 30px;
+
+        &::before, &::after {
+            content: '';
+            background-color: $white;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+        }
+
+        &::before {
+            top: 0;
+            transition: all 0.3s ease 0s;
+        }
+        &::after {
+            bottom: 0;
+            transition: all 0.3s ease 0s;
+        }
+
+        span {
+            position: absolute;
+            background-color: $white;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            top: 13.5px;
+            transition: all 0.3s ease 0s;
+        }
+        
+        &.active-burger::before {
+            transform: rotate(45deg);
+            top: 13.5px;
+        }
+        &.active-burger::after {
+            transform: rotate(-45deg);
+            bottom: 13.5px;
+        }
+        &.active-burger span {
+            transform: scale(0);
+        }
+    } 
+    .header__menu {
+        overflow: auto;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $mainGreen;
+        transition: all 0.5s ease 0s;
+        &.active-burger {
+            top: 0;
+        }
+    }
+    .menu {
+        &__list {
+            padding-top: 30%;
+            flex-direction: column;
+            text-align: center;
+            row-gap: 60px;
+        }
+
+        &__link {
+            font-size: 26px;
+        }
+    }
+}
