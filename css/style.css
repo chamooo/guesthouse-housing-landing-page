@@ -216,7 +216,7 @@ body {
   padding-top: 80px;
   height: 730px;
   width: 100%;
-  background-image: url("/img/header.jpg");
+  background-image: url("img/header.jpg");
   background-size: cover;
 }
 .welcome__container {
